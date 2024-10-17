@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  directus:
+    image: rdysell/directus:${TAG:-latest}
+    ports:
+      - "8055:8055"
+    environment:
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      KEY: ${ADMIN_KEY}
+      PORT: 8055
